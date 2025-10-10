@@ -1,9 +1,33 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
-	<head>
-		<title>Accueil bibliothèque</title>
-	</head>
-	<body>
-		<h1 th:text="${message}">Message par défaut</h1>
-	</body>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+	<title>Comic Helper</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Comic Helper</h1>
+		
+<!--		
+-->
+		<div>
+			<h2>Liste de mes BDs</h2>
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">Nom Série</th>
+			      <th scope="col">Volume</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="comic : ${comics}">
+			      <th scope="col" th:text="${comic.comicName}">Nom Série</th>
+			      <td th:text="${comic.comicVolume}">Volume</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+		
+	</div>
+</body>
 </html>
