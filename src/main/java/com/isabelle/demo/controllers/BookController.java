@@ -29,6 +29,8 @@ public class BookController {
 	@GetMapping
 	public String index(Model model) {
 		List<Book> books = bookRepository.findAllByOrderByNameAsc();
+		model.addAttribute("title", "Bibliothèque");
+		model.addAttribute("pageTitle", "Ma Bibliothèque");
 		model.addAttribute("books", books);
 		model.addAttribute("book", new Book()); // Ajout de l'objet book pour le formulaire
 		model.addAttribute("message", "bonjour biblio");
