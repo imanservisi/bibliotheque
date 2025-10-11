@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <title>Modifier une BD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Modifier une BD</h1>
+        
+        <div>
+            <form th:action="@{'/' + ${book.id}}" th:object="${book}" method="post">
+                <input type="hidden" th:field="*{id}">
+                <div class="mb-3">
+                    <label for="bookTitle" class="form-label">Nom Série</label>
+                    <input th:field="*{name}" type="text" class="form-control" id="bookTitle" aria-describedby="bookTitle">
+                    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="volumeNumber" class="form-label">N° du volume</label>
+                    <input th:field="*{volume}" type="number" class="form-control" id="volumeNumber">
+                    <div th:if="${#fields.hasErrors('volume')}" th:errors="*{volume}" class="text-danger"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Modifier</button>
+                <a href="/" class="btn btn-secondary">Annuler</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
