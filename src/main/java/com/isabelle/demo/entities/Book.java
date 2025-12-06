@@ -69,10 +69,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "{" +
-			"name='" + name + "'" +
-			", volume='" + volume + "'" +
-			", dateCreation='" + dateCreation + "'" +
-			"}";
+		return "Livre [idLivre=" + id + ", nom=" + name
+				+ ", dateCreation=" + dateCreation + "]";
 	}	
 }

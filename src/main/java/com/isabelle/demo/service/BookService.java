@@ -12,7 +12,7 @@ public interface BookService {
     void deleteBookById(Long id);
     Book getBook(Long id);
     List<Book> getAllBooks();
-    List<Book> findByNameBook(String name);
-    List<Book> findByNameBookContains(String name);
+    List<Book> findByName(String name);
+    List<Book> findByNameContains(String name);
     List<Book> findAllByOrderByNameAsc();
 }
