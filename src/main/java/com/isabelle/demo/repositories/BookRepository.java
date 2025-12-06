@@ -8,4 +8,6 @@ import com.isabelle.demo.entities.Book;
 
 public interface BookRepository extends JpaRepository<Book, Long>{
     List<Book> findAllByOrderByNameAsc();
+    List<Book> findByNameBook(String name);
+    List<Book> findByNameBookContains(String name);
 }

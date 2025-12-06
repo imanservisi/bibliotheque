@@ -23,6 +23,17 @@ public class Book {
 	private Integer volume;
 	
 	private LocalDateTime dateCreation;
+
+	public Book() {
+		super();
+	}
+
+	public Book(String name, Integer volume, LocalDateTime dateCreation) {
+		super();
+		this.name = name;
+		this.volume = volume;
+		this.dateCreation = dateCreation;
+	}
 	
 	public Long getId() {
 		return id;
@@ -55,5 +66,13 @@ public class Book {
 	public void setDateCreation(LocalDateTime dateCreation) {
 		this.dateCreation = dateCreation;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "{" +
+			"name='" + name + "'" +
+			", volume='" + volume + "'" +
+			", dateCreation='" + dateCreation + "'" +
+			"}";
+	}	
 }
