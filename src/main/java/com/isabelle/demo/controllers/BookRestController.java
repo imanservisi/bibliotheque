@@ -23,6 +23,8 @@ public class BookRestController {
 
     @RequestMapping(method=RequestMethod.GET)
     public List<Book> getAllBooks() {
+    	
+    	
         return bookService.getAllBooks();
     }
     
